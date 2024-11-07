@@ -1,0 +1,209 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**
+ PRIMARY LAYOUT
+**/
+:root {
+	--primary-color: #99B2DD;
+	--primary-dark: #23395B;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+p {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+/**
+ GLOBAL DEFAULT -- Headers
+**/
+h1, h2, h3, h4, h5, h6, .text-header {
+	font-family: "Fredoka", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}
+h1 {
+    font-size: 2em;
+	padding: 15px 0;
+}
+h2 {
+	font-size: 1.5em;
+	padding: 15px 0;
+}
+
+/**
+ GLOBAL DEFAULT -- Links
+**/
+a {
+	color: black;
+	text-decoration: none;
+}
+a:hover{
+	opacity: 0.75;
+}
+
+/**
+ SECTION -- Navigation
+**/
+nav {
+	background-color: var(--primary-dark);
+	color: white;
+}
+nav ul {
+	display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+nav a {
+	color: white;
+}
+
+/**
+ SECTION -- Club Menu
+**/
+.club-menu {
+	background-color: var(--primary-color);
+	padding: 15px;
+}
+.club-menu-header.text-header {
+	color: var(--primary-dark);
+	border-bottom: 1px var(--primary-dark) solid;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+.club-menu li {
+	padding: 5px 0;
+}
+
+/**
+ SECTION -- News Wrapper
+**/
+.news-wrapper h1 {
+	padding: 15px;
+	text-align: center;
+}
+.news-preview {
+	background: ghostwhite;
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    margin: 15px;
+}
+.news-preview .preview-image {
+	margin: 0 auto;
+	text-align: center;
+	max-height: 200px;
+	overflow: hidden;
+}
+
+/**
+ ARTICLE PAGE
+**/
+.return-wrapper {
+	padding: 10px;
+	background-color: ghostwhite;
+}
+.article-main {
+	background: ghostwhite;
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    margin: 15px;
+}
+.article-main .cover-image {
+	max-height: 200px;
+	overflow: hidden;
+}
+.quote-right {
+	float: right;
+	max-width: 200px;
+    background: lightsteelblue;
+    padding: 5px;
+    margin: 5px;
+    border-left: 5px solid var(--primary-dark);
+}
+
+
+/**
+ SECTION -- Footer
+**/
+footer {
+	background-color: var(--primary-dark);
+	color: white;
+	padding: 15px;
+	margin-top: 15px;
+}
+/**
+LAYOUT--Table/Web
+**/
+@media screen and (min-width:720px) {
+	.grid-container{
+		display: grid;
+		grid-template-areas:
+		'nav nav nav'
+		'menu main main'
+		'footer footer footer' ;
+	}
+	nav {grid-area: nav; }
+	.club-menu {grid-area: menu;}
+	.news-wrapper{grid-area: main;}
+	footer {grid-area: footer;}
+
+	/**
+	Article web view
+	**/
+	.article-content{
+		columns: 2;
+	}
+}
